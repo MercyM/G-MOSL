@@ -1,0 +1,4 @@
+scenario: Ant-v2 #HalfCheetah-v2 #Walker2d-v2 ##manyagent_swimmer ###Swimmer-v2 #####Reacher-v2 ######Hopper-v2 #######Ant-v2 #HumanoidStandup-v2
+agent_conf: 8x1 #6x1 #2x3,3x2,6x1 ##2x1 ###2x3 ####2x1 #####2x1 ######3x1 #######2x4 8x1 #17x1
+agent_obsk: 0 # We use the fully observable setting, so this argument is not useful. But we still keep it.
+episode_limit: 1000
