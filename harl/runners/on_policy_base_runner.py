@@ -107,7 +107,7 @@ class OnPolicyBaseRunner:
         print("action_space: ", self.envs.action_space)
 
         # actor
-        if self.args["algo"] == "mappo_graph" or self.args["algo"] == "happo_graph" or self.args[
+        if self.args["algo"] == "gmosl" or self.args["algo"] == "happo_graph" or self.args[
             "algo"] == "haa2c_graph" or self.args["algo"] == "hatrpo_graph":
             # actor
             if self.share_param:
@@ -174,7 +174,7 @@ class OnPolicyBaseRunner:
 
         if self.algo_args["render"]["use_render"] is False:  # train, not render
             self.actor_buffer = []
-            if args["algo"] == "mappo_graph" or self.args["algo"] == "happo_graph" or self.args[
+            if args["algo"] == "gmosl" or self.args["algo"] == "happo_graph" or self.args[
                 "algo"] == "haa2c_graph" or self.args["algo"] == "hatrpo_graph":
                 for agent_id in range(self.num_agents):
                     ac_bu = OnPolicyActorGraphBuffer(
@@ -228,7 +228,7 @@ class OnPolicyBaseRunner:
         if self.algo_args["train"]["model_dir"] is not None:  # restore model
             self.restore()
 
-        if args["algo"] == "mappo_graph" or self.args["algo"] == "happo_graph" or self.args[
+        if args["algo"] == "gmosl" or self.args["algo"] == "happo_graph" or self.args[
             "algo"] == "haa2c_graph" or self.args["algo"] == "hatrpo_graph":
             if algo_args["algo"]["shareGraph"] == True:
                 self.lr_graph = algo_args["model"]["lr_graph"]
@@ -296,7 +296,7 @@ class OnPolicyBaseRunner:
             # sample_time = time.time()
             for step in range(self.algo_args["train"]["episode_length"]):
                 # Sample actions from actors and values from critics
-                if self.args["algo"] == "mappo_graph" or self.args["algo"] == "happo_graph" or self.args[
+                if self.args["algo"] == "gmosl" or self.args["algo"] == "happo_graph" or self.args[
                     "algo"] == "haa2c_graph" or self.args["algo"] == "hatrpo_graph":
                     (
                         values,
@@ -330,7 +330,7 @@ class OnPolicyBaseRunner:
                 # dones: (n_threads, n_agents)
                 # infos: (n_threads)
                 # available_actions: (n_threads, ) of None or (n_threads, n_agents, action_number)
-                if self.args["algo"] == "mappo_graph" or self.args["algo"] == "happo_graph" or self.args[
+                if self.args["algo"] == "gmosl" or self.args["algo"] == "happo_graph" or self.args[
                     "algo"] == "haa2c_graph" or self.args["algo"] == "hatrpo_graph":
                     data = (
                         obs,
@@ -364,7 +364,7 @@ class OnPolicyBaseRunner:
 
                 self.logger.per_step(data)  # logger callback at each step
 
-                if self.args["algo"] == "mappo_graph" or self.args["algo"] == "happo_graph" or self.args[
+                if self.args["algo"] == "gmosl" or self.args["algo"] == "happo_graph" or self.args[
                     "algo"] == "haa2c_graph" or self.args["algo"] == "hatrpo_graph":
                     self.insertGraph(data)  # insert data into buffer
                 else:
@@ -893,7 +893,7 @@ class OnPolicyBaseRunner:
             eval_actions_collector = []
             for agent_id in range(self.num_agents):
 
-                if self.args["algo"] == "mappo_graph" or self.args["algo"] == "happo_graph" or self.args[
+                if self.args["algo"] == "gmosl" or self.args["algo"] == "happo_graph" or self.args[
                     "algo"] == "haa2c_graph" or self.args["algo"] == "hatrpo_graph":
                     eval_actions, temp_rnn_state = self.actor[agent_id].act(
                         eval_obs[:, agent_id],

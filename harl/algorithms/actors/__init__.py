@@ -9,7 +9,7 @@ from harl.algorithms.actors.had3qn import HAD3QN
 from harl.algorithms.actors.maddpg import MADDPG
 from harl.algorithms.actors.matd3 import MATD3
 from harl.algorithms.actors.mappo import MAPPO
-from harl.algorithms.actors.mappo_graph import MAPPOGraph
+from harl.algorithms.actors.gmosl import GMOSL
 from harl.algorithms.actors.happo_graph import HAPPOGraph
 
 ALGO_REGISTRY = {
@@ -23,6 +23,6 @@ ALGO_REGISTRY = {
     "maddpg": MADDPG,
     "matd3": MATD3,
     "mappo": MAPPO,
-    "mappo_graph": MAPPOGraph,
+    "gmosl": GMOSL,
     "happo_graph": HAPPOGraph,
 }

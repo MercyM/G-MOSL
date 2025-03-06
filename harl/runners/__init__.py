@@ -17,6 +17,6 @@ RUNNER_REGISTRY = {
     "maddpg": OffPolicyMARunner,
     "matd3": OffPolicyMARunner,
     "mappo": OnPolicyMARunner,
-    "mappo_graph": OnPolicyMAGraphRunner,
+    "gmosl": OnPolicyMAGraphRunner,
     "happo_graph": OnPolicyHAGraphRunner,
 }

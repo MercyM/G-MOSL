@@ -18,5 +18,5 @@ CRITIC_REGISTRY = {
     "had3qn": DiscreteQCritic,
     "maddpg": ContinuousQCritic,
     "matd3": TwinContinuousQCritic,
-    "mappo_graph": VCritic,
+    "gmosl": VCritic,
 }

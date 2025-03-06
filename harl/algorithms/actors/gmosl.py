@@ -18,7 +18,7 @@ import time
 from harl.utils.envs_tools import get_shape_from_obs_space
 
 
-class MAPPOGraph(OnPolicyBase):
+class GMOSL(OnPolicyBase):
     def __init__(self, args, obs_space, act_space, num_agents, agent_id, device=torch.device("cpu")):
         """Initialize MAPPO algorithm.
         Args:
@@ -27,7 +27,7 @@ class MAPPOGraph(OnPolicyBase):
             act_space: (gym.spaces) action space.
             device: (torch.device) device to use for tensor operations.
         """
-        super(MAPPOGraph, self).__init__(args, obs_space, act_space, device)
+        super(GMOSL, self).__init__(args, obs_space, act_space, device)
 
         self.clip_param = args["clip_param"]
         self.ppo_epoch = args["ppo_epoch"]

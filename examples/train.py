@@ -24,7 +24,7 @@ def main():
             "maddpg",
             "matd3",
             "mappo",
-            "mappo_graph",
+            "gmosl",
             "happo_graph",
         ],
         help="Algorithm name. Choose from: happo, hatrpo, haa2c, haddpg, hatd3, hasac, had3qn, maddpg, matd3, mappo.",

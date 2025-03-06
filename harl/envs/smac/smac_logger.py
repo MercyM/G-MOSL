@@ -29,7 +29,7 @@ class SMACLogger(BaseLogger):
         )
 
     def per_step(self, data):
-        if self.args["algo"] == "mappo_graph" or self.args["algo"] == "happo_graph" or self.args[
+        if self.args["algo"] == "gmosl" or self.args["algo"] == "happo_graph" or self.args[
             "algo"] == "haa2c_graph" or self.args["algo"] == "hatrpo_graph":
             (
                 obs,
